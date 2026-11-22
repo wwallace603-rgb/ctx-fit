@@ -1,0 +1,32 @@
+{
+  "name": "ctx-fit",
+  "version": "0.1.0",
+  "description": "Check if your prompt fits in a local LLM's context window \u2014 plan RAG budgets, system prompts, and output reserves offline.",
+  "homepage": "https://www.ghettoboxai.com/llm-ops-cheatsheet/llm-ops-cheatsheet/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wwallace603-rgb/ctx-fit.git"
+  },
+  "author": "GhettoBoxAI <info@ghettoboxai.com>",
+  "license": "MIT",
+  "bin": {
+    "ctx-fit": "bin/ctx-fit.js"
+  },
+  "keywords": [
+    "llm",
+    "local-llm",
+    "context-window",
+    "token-budget",
+    "rag",
+    "prompt-engineering",
+    "llama",
+    "mistral",
+    "qwen",
+    "gemma",
+    "phi"
+  ],
+  "files": [
+    "bin/",
+    "models.json"
+  ]
+}
