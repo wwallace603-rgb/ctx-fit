@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-fit"
+version = "0.1.0"
+description = "Check if your prompt fits in a local LLM's context window — plan RAG budgets, system prompts, and output reserves offline."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "GhettoBoxAI", email = "info@ghettoboxai.com"}]
+keywords = [
+    "llm", "local-llm", "context-window", "token-budget", "rag",
+    "prompt-engineering", "llama", "mistral", "qwen", "gemma", "phi"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.8"
+dependencies = []
+
+[project.scripts]
+llm-fit = "llm_fit.cli:main"
+
+[project.urls]
+Homepage = "https://www.ghettoboxai.com/llm-ops-cheatsheet/llm-ops-cheatsheet/"
+Repository = "https://github.com/wwallace603-rgb/llm-fit"
+"Prompt Engineering Playbook" = "https://www.ghettoboxai.com/prompt-engineering-playbook/prompt-engineering-playbook/"
+"RAG in Production" = "https://www.ghettoboxai.com/ai-agent-architecture/building-rag-systems-production/"
+
+[tool.setuptools.packages.find]
+include = ["llm_fit*"]
+
+[tool.setuptools.package-data]
+llm_fit = ["*.json"]
