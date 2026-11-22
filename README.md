@@ -15,6 +15,13 @@ Most token-cost tools assume you're paying per API call. Local models are free â
 ## Install
 
 ```bash
+# npm (Node CLI)
+npm install -g @ghettoboxai/ctx-fit
+
+# or one-shot:
+npx @ghettoboxai/ctx-fit --list
+
+# PyPI (Python lib + CLI)
 pip install ctx-fit
 ```
 
