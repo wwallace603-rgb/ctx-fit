@@ -16,10 +16,10 @@ Most token-cost tools assume you're paying per API call. Local models are free â
 
 ```bash
 # npm (Node CLI)
-npm install -g @ghettoboxai/ctxbudget
+npm install -g ctxbudget
 
 # or one-shot:
-npx @ghettoboxai/ctxbudget --list
+npx ctxbudget --list
 
 # PyPI (Python lib + CLI)
 pip install ctxbudget
