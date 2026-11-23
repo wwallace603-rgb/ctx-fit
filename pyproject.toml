@@ -44,4 +44,4 @@ Repository = "https://github.com/wwallace603-rgb/ctx-fit"
 include = ["ctxbudget*"]
 
 [tool.setuptools.package-data]
-ctxbudget = ["*.json"]
+windowfit = ["*.json"]
