@@ -1,5 +1,5 @@
 {
-  "name": "@ghettoboxai/ctx-fit",
+  "name": "@ghettoboxai/ctxbudget",
   "version": "0.1.0",
   "description": "Check if your prompt fits in a local LLM's context window \u2014 plan RAG budgets, system prompts, and output reserves offline.",
   "homepage": "https://www.ghettoboxai.com/llm-ops-cheatsheet/llm-ops-cheatsheet/",
@@ -10,7 +10,7 @@
   "author": "GhettoBoxAI <info@ghettoboxai.com>",
   "license": "MIT",
   "bin": {
-    "ctx-fit": "bin/ctx-fit.js"
+    "ctxbudget": "bin/ctxbudget.js"
   },
   "keywords": [
     "llm",

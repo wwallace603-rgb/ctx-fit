@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * ctx-fit — Check if your prompt fits in a local LLM's context window.
+ * ctxbudget — Check if your prompt fits in a local LLM's context window.
  * Zero dependencies. Works offline.
  */
 const fs = require("fs");

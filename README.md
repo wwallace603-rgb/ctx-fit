@@ -1,4 +1,4 @@
-# ctx-fit
+# ctxbudget
 
 **Does your prompt actually fit in this model's context window?**
 
@@ -10,19 +10,19 @@ A zero-dependency CLI for planning token budgets against local LLM context limit
 
 You've got a 32K-context Qwen2.5 running locally. Your system prompt is 2K tokens. Your RAG pipeline retrieves 4 chunks × 1024 tokens each. You want 1K tokens of output. Does it fit?
 
-Most token-cost tools assume you're paying per API call. Local models are free — but the window is hard. Overflow means truncated context, lost instructions, or a crash. `ctx-fit` answers this in one command, offline, no API key needed.
+Most token-cost tools assume you're paying per API call. Local models are free — but the window is hard. Overflow means truncated context, lost instructions, or a crash. `ctxbudget` answers this in one command, offline, no API key needed.
 
 ## Install
 
 ```bash
 # npm (Node CLI)
-npm install -g @ghettoboxai/ctx-fit
+npm install -g @ghettoboxai/ctxbudget
 
 # or one-shot:
-npx @ghettoboxai/ctx-fit --list
+npx @ghettoboxai/ctxbudget --list
 
 # PyPI (Python lib + CLI)
-pip install ctx-fit
+pip install ctxbudget
 ```
 
 ## Usage
@@ -31,17 +31,17 @@ pip install ctx-fit
 
 ```bash
 # Does 8192 tokens of input fit in Llama 3.1 8B?
-ctx-fit llama-3.1-8b 8192
+ctxbudget llama-3.1-8b 8192
 
 # Same, but reserve 2048 tokens for output
-ctx-fit llama-3.1-8b 8192 --reserve 2048
+ctxbudget llama-3.1-8b 8192 --reserve 2048
 ```
 
 ### RAG budget breakdown
 
 ```bash
 # System: 2K, User: 512, Retrieved context: 4K, Reserve output: 1K
-ctx-fit qwen2.5-7b --system 2048 --user 512 --context 4096 --reserve 1024
+ctxbudget qwen2.5-7b --system 2048 --user 512 --context 4096 --reserve 1024
 ```
 
 Output:
@@ -66,13 +66,13 @@ Output:
 ### List all known models
 
 ```bash
-ctx-fit --list
+ctxbudget --list
 ```
 
 ### JSON output (for scripting)
 
 ```bash
-ctx-fit llama-3.1-8b 4096 --json
+ctxbudget llama-3.1-8b 4096 --json
 # {"model":"llama-3.1-8b","context":131072,"input_tokens":4096,"fits":true,"margin":126976}
 ```
 
@@ -94,7 +94,7 @@ ctx-fit llama-3.1-8b 4096 --json
 
 - **Before deploying a RAG pipeline** — verify your chunk count × chunk size + system prompt fits
 - **When switching models** — "I'm moving from Llama 8B (128K) to Gemma 2 9B (8K). Does my prompt still fit?"
-- **In CI/CD** — gate deployment on token budget: `ctx-fit $MODEL $TOKEN_COUNT --reserve $OUTPUT || exit 1`
+- **In CI/CD** — gate deployment on token budget: `ctxbudget $MODEL $TOKEN_COUNT --reserve $OUTPUT || exit 1`
 - **When debugging truncation** — confirm whether your framework is silently dropping context
 
 ## Related Guides
